@@ -23,3 +23,18 @@ Auto grow and save area
         })
     }
 })</pre>
+
+Стили
+----
+Ненавязчиво подсказать, что текст редактируется, можно таким стилем
+<pre>.autogrow-textarea-mirror {
+    cursor: text;
+}</pre>
+либо таким, где на поле делается больший акцент
+<pre>.autogrow-textarea-mirror {
+    cursor: pointer;
+}
+.autogrow-textarea-mirror:hover {
+    background-color: rgba(0, 136, 204, 0.1);
+    border-radius: 5px;
+}</pre>
