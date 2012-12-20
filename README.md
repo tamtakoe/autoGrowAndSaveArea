@@ -38,5 +38,4 @@ Auto grow and save area
 }
 .autogrow-textarea-mirror:hover {
     background-color: rgba(0, 136, 204, 0.1);
-    border-radius: 5px;
 }</pre>
