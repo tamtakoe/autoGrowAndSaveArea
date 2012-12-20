@@ -61,6 +61,7 @@ jQuery.fn.autoGS = function(options) {
                 .css('paddingBottom',     $textarea.css('paddingBottom'))
                 .css('paddingLeft',       $textarea.css('paddingLeft'))
                 .css('paddingRight',      $textarea.css('paddingRight'))
+                .css('width',             $textarea.css('width'))
                 .hide().insertAfter($textarea);
         }
 		
@@ -77,8 +78,7 @@ jQuery.fn.autoGS = function(options) {
         if (!self.options.editor) {
             $mirror.show();
             $textarea.hide();
-        }
-		
+        }		
         if (self.options.toggle) {
             $mirror.on('click', function (e) {
                 $textarea.show()[0].focus();
