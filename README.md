@@ -10,7 +10,7 @@ Auto grow and save area
 @toggle boolean or function - Поле ввода статично (false) либо показывается/превращается в обычный текст
                               при получении/потере фокуса (true).
                               При потере фокуса может быть выполнена пользовательская функция,
-                              которой передается идентификатор поля и его значение (function(event, value))</pre>
+                              которой передается объект события (function(event))</pre>
 
 **Пример подключения в режиме автоподстраивания под текст**
 <pre>$('textarea').autoGS()</pre>
@@ -18,10 +18,10 @@ Auto grow and save area
 **В режиме автоподстраивания и сохранения**
 <pre>$('textarea').autoGS({
     'editor': false,
-    'toggle': function(e, value) {
+    'toggle': function(e) {
         $.ajax({
             'url': 'save.php',
-            'data': {'id': e.target.id, 'title': value}
+            'data': {'id': e.target.id, 'title': e.target.value}
         })
     }
 })</pre>
