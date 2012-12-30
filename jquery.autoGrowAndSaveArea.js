@@ -36,9 +36,7 @@ jQuery.fn.autoGS = function(options) {
             .css('minHeight', this.rows+'em');
             
         // make mirror
-        if ($textarea.next('.autogrow-textarea-mirror').length) {
-            var $mirror = $textarea.next('.autogrow-textarea-mirror').eq(0);
-        } else {
+        if (!$textarea.next('.autogrow-textarea-mirror').length) {
             var $mirror = $('<div class="autogrow-textarea-mirror"></div>').css({
                     'wordWrap':          'break-word',
                     'borderColor':       'transparent',
@@ -60,9 +58,12 @@ jQuery.fn.autoGS = function(options) {
                     'paddingTop':        $textarea.css('paddingTop'),
                     'paddingBottom':     $textarea.css('paddingBottom'),
                     'paddingLeft':       $textarea.css('paddingLeft'),
-                    'paddingRight':      $textarea.css('paddingRight'),
-                    'width':             $textarea.css('width')})
-                .hide().insertAfter($textarea);
+                    'paddingRight':      $textarea.css('paddingRight')})
+                .width($textarea.width())
+                .hide()
+                .insertAfter($textarea);
+        } else {
+            var $mirror = $textarea.next('.autogrow-textarea-mirror').eq(0);
         }
 		
         // send content to mirror every key up
